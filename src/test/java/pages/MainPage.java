@@ -26,7 +26,7 @@ public class MainPage {
     private static final By SIGN_UP_SUBMIT_BUTTON = By.cssSelector("button[onclick='register()']");
 
     public MainPage open() {
-        log.info("Open main page");
+        log.info("Открытие главной страницы");
 
         driver.get("https://www.demoblaze.com/");
         return this;
@@ -41,7 +41,7 @@ public class MainPage {
     }
 
     public MainPage signUp(String username, String password) {
-        log.info("Try to sign up with '{}' username & '{}' password", username, password);
+        log.info("Попытка регистрации с именем '{}' и паролем '{}'", username, password);
 
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
@@ -51,7 +51,7 @@ public class MainPage {
     }
 
     public String getConfirmMessage() {
-        log.info("Get message from alert");
+        log.info("Получение сообщения из алерта");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
